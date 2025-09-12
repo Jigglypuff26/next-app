@@ -9,7 +9,7 @@
     --color-divider: var(--color-ligth-light-blue);
 }
 
-@theme inline {}
+/* @theme inline {} */
 
 @media (prefers-color-scheme: dark) {
   :root {

@@ -1,6 +1,6 @@
 import { LogoIcon } from '@/assets/icons'
 import { COMPANY } from '@/config/company'
-import { Box, Divider, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import { NextPage } from 'next'
 import Image from 'next/image'
 import classes from './header.module.css';
