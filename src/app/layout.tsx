@@ -1,22 +1,29 @@
-import type { Metadata } from "next";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
+import type { Metadata } from 'next';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import { ThemeProvider } from '@mui/material/styles';
-import { Roboto } from "next/font/google";
-import "./globals.css";
+import { Roboto } from 'next/font/google';
 
-import theme from "./theme";
+import theme from '../providers/theme';
+
+import Header from '@/components/common/Header/Header';
+
+import './globals.css';
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
-  subsets: ['latin'],
+  subsets: ['latin', 'cyrillic'],
   display: 'swap',
   variable: '--font-roboto',
 });
 
 export const metadata: Metadata = {
-  title: "Моё Next Приложение",
-  description: "Описание",
+  title: {
+    template: '%s - Next-app', // title страницы если заходми на другую страницу
+    default: 'Next-app По умолчанию' // title страницы если заходим на коерневую страницу
+  },
+  description: 'Описание',
 };
+
 
 export default function RootLayout({
   children,
@@ -24,12 +31,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body
         className={`${roboto.variable} antialiased`}
       >
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
+            <Header/>
             {children}
           </ThemeProvider>
         </AppRouterCacheProvider>

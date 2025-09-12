@@ -1,0 +1,30 @@
+  :root {
+
+    /* colors ligth*/
+    --color-ligth-white: #ffffff;
+    --color-ligth-dark-blue: #131e37;
+    --color-ligth-gray-blue: #627092;
+    --color-ligth-light-blue: #e5eef8;
+    --color-ligth-ultra-blue: #ebf0f5;
+    
+    /* colors dark*/
+    --color-dark-black: #000000;
+    --color-dark-purpure: #443355;
+    --color-dark-dark: #333333;
+    --color-dark-dark-gray: #555555;
+    --color-dark-light-gray: #999999;
+    --color-dark-bege: #eeeedd;
+
+    /* width */
+    --width-mobileS: 320px;
+    --width-mobileM: 375px;
+    --width-mobileL: 425px;
+    --width-tablet: 768px;
+    --width-laptop: 1024px;
+    --width-laptopL: 1440px;
+    --width-desktop: 2560px;
+
+    /* Header */
+    --header-height: 48px;
+
+}
