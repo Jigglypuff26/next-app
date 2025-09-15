@@ -1,25 +1,6 @@
 @import "tailwindcss";
-@import '../config/style.css';
-
-:root {
-    --color-background: var(--color-ligth-white);
-
-    --color-text: var(--color-ligth-dark-blue);
-
-    --color-divider: var(--color-ligth-light-blue);
-}
-
-/* @theme inline {} */
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--color-dark-black);
-
-    --color-text: var(--color-dark-bege);
-
-    --color-divider: var(--color-dark-light-gray);
-  }
-}
+@import '../config/app.css';
+@import '../config/color.scheme.css';
 
 body {
   background: var(--color-background);

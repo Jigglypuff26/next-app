@@ -1,0 +1,14 @@
+  :root {
+    /* width */
+    --width-mobileS: 320px;
+    --width-mobileM: 375px;
+    --width-mobileL: 425px;
+    --width-tablet: 768px;
+    --width-laptop: 1024px;
+    --width-laptopL: 1440px;
+    --width-desktop: 2560px;
+
+    /* Header */
+    --header-height: 48px;
+
+}

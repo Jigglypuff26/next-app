@@ -1,3 +1,4 @@
+'use client';
 import { LogoIcon } from '@/assets/icons'
 import { COMPANY } from '@/config/company'
 import { Box, Typography } from '@mui/material'
@@ -11,6 +12,8 @@ type HeaderProps = {
 
 const Header: NextPage<HeaderProps> = (props) => {
     const { variant = 'default' } = props;
+    // const darkModePreference = window.matchMedia("(prefers-color-scheme: dark)");
+    // console.log(darkModePreference);
 
     return (
         <Box className={classes.wrapper} >
