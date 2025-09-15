@@ -1,36 +1,32 @@
 :root {
-    /* colors ligth palette*/
-    --color-ligth-white: rgb(255 255 255);
-    --color-ligth-dark-blue: rgb(19 30 55);
-    --color-ligth-gray-blue: rgb(98 112 146);
-    --color-ligth-light-blue: rgb(229 238 248);
-    --color-ligth-ultra-blue: rgb(235 240 245);
-    
-    /* colors dark palette*/
-    --color-dark-black: rgb(0 0 0);
-    --color-dark-purpure: rgb(68 51 85);
-    --color-dark-dark: rgb(51 51 51);
-    --color-dark-dark-gray: rgb(85 85 85);
-    --color-dark-light-gray: rgb(153 153 153);
-    --color-dark-bege: rgb(238 238 221);
+  /* colors ligth palette*/
+  --color-ligth-white: rgb(255 255 255);
+  --color-ligth-white-gray: rgb(226, 229, 236);
+  --color-ligth-dark-blue: rgb(19 30 55);
+  --color-ligth-gray-blue: rgb(98 112 146);
+  --color-ligth-blue: rgb(0 113 254);
+  
+  /* colors dark palette*/
+  --color-dark-black: rgb(0 0 0);
+  --color-dark-purpure: rgb(28 28 40);
+  --color-dark-purpure-divider: rgb(51 51 61);
+  --color-dark-purpure-gray: rgb(40 41 61);
+  --color-dark-bege: rgb(238 238 221);
+  --color-dark-blue: rgb(62 123 250);
 
-    /*  Ligth scheme */
-    --color-background: var(--color-ligth-white);
-
-    --color-text: var(--color-ligth-dark-blue);
-
-    --color-divider: var(--color-ligth-light-blue);
+  /*  Ligth scheme */
+  --color-background-body: var(--color-ligth-white-gray);
+  --color-background: var(--color-ligth-white);
+  --color-text: var(--color-ligth-dark-blue);
+  --color-divider: var(--color-ligth-white-gray);
 }
 
 /* @theme inline {} */
 
 /*  Dark scheme */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--color-dark-black);
-
-    --color-text: var(--color-dark-bege);
-
-    --color-divider: var(--color-dark-light-gray);
-  }
+.dark {
+  --color-background-body: var(--color-dark-purpure);
+  --color-background: var(--color-dark-purpure-gray);
+  --color-text: var(--color-dark-bege);
+  --color-divider: var(--color-dark-purpure-divider);
 }

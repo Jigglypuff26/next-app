@@ -1,9 +1,10 @@
 'use client';
-import { LogoIcon } from '@/assets/icons'
-import { COMPANY } from '@/config/company'
-import { Box, Typography } from '@mui/material'
-import { NextPage } from 'next'
-import Image from 'next/image'
+import { LogoIcon } from '@/assets/icons';
+import { COMPANY } from '@/config/company';
+import { Box, Typography } from '@mui/material';
+import { NextPage } from 'next';
+import Image from 'next/image';
+import ThemeToggle from '@/components/UI/ThemeToggle/ThemeToggle';
 import classes from './header.module.css';
 
 type HeaderProps = {
@@ -12,8 +13,6 @@ type HeaderProps = {
 
 const Header: NextPage<HeaderProps> = (props) => {
     const { variant = 'default' } = props;
-    // const darkModePreference = window.matchMedia("(prefers-color-scheme: dark)");
-    // console.log(darkModePreference);
 
     return (
         <Box className={classes.wrapper} >
@@ -27,7 +26,10 @@ const Header: NextPage<HeaderProps> = (props) => {
                     />
                     <Typography>{COMPANY.name}</Typography>
                 </Box>
-                <Box>Links {variant}</Box>
+                <Box className={classes.settings_wrapper}>
+                    <ThemeToggle initialValue={'light'} />
+                    Links {variant}
+                </Box>
             </header>
         </Box>
     );

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import clsx from 'clsx';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import { ThemeProvider } from '@mui/material/styles';
 import { Roboto } from 'next/font/google';
@@ -33,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`${roboto.variable} antialiased`}
+        className={clsx(roboto.variable, 'antialiased')}
       >
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>

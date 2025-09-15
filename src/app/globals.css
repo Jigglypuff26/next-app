@@ -3,6 +3,6 @@
 @import '../config/color.scheme.css';
 
 body {
-  background: var(--color-background);
+  background: var(--color-background-body);
   color: var(--color-text);
 }
