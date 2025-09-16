@@ -1,6 +1,6 @@
 'use client';
 import { LogoIcon } from '@/assets/icons';
-import { COMPANY } from '@/config/company';
+import { COMPANY } from '@/config/app.settings';
 import { Box, Typography } from '@mui/material';
 import { NextPage } from 'next';
 import Image from 'next/image';
@@ -26,9 +26,11 @@ const Header: NextPage<HeaderProps> = (props) => {
                     />
                     <Typography>{COMPANY.name}</Typography>
                 </Box>
+                <Box className={classes.navigation_wrapper}>
+                    <Typography>Nav Links: {variant}</Typography>
+                </Box>
                 <Box className={classes.settings_wrapper}>
-                    <ThemeToggle initialValue={'light'} />
-                    Links {variant}
+                    <ThemeToggle />
                 </Box>
             </header>
         </Box>

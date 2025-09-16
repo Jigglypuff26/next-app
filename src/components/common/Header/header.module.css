@@ -28,6 +28,8 @@
     max-width: var(--width-laptopL);
 }
 
+.navigation_wrapper {}
+
 .logo_wrapper {
     display: flex;
     align-items: center;

@@ -4,12 +4,14 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { Theme } from '@/shared/theme.type';
 import classes from './themeToggle.module.css';
+import { setLocalStorage } from '@/utils/localStorage';
 
 type ThemeToggle = {
-  initialValue: Theme
+  initialValue?: Theme
 }
 
-const ThemeToggle: React.FC<ThemeToggle> = ({ initialValue }) => {
+const ThemeToggle: React.FC<ThemeToggle> = (props) => {
+  const { initialValue = 'light' } = props
   const [theme, setTheme] = useState(initialValue);
 
   const isDarkTheme = React.useMemo(() => theme === 'dark', [theme]);
@@ -20,6 +22,7 @@ const ThemeToggle: React.FC<ThemeToggle> = ({ initialValue }) => {
     body?.classList.remove(theme);
     body?.classList.add(currentTheme);
     setTheme(currentTheme);
+    setLocalStorage('App', { theme: currentTheme });
   }, [theme, setTheme]);
 
   useEffect(() => {
