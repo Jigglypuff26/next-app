@@ -1,4 +1,5 @@
 'use client';
+
 import { LogoIcon } from '@/assets/icons';
 import { COMPANY } from '@/config/app.settings';
 import { Box, Typography } from '@mui/material';
@@ -7,11 +8,11 @@ import Image from 'next/image';
 import ThemeToggle from '@/components/UI/ThemeToggle/ThemeToggle';
 import classes from './header.module.css';
 
-type HeaderProps = {
+type HeaderPropsTypes = {
     variant?: "default" | "user" | "admin"
 }
 
-const Header: NextPage<HeaderProps> = (props) => {
+const Header: NextPage<HeaderPropsTypes> = (props) => {
     const { variant = 'default' } = props;
 
     return (
@@ -30,7 +31,7 @@ const Header: NextPage<HeaderProps> = (props) => {
                     <Typography>Nav Links: {variant}</Typography>
                 </Box>
                 <Box className={classes.settings_wrapper}>
-                    <ThemeToggle />
+                    <ThemeToggle/>
                 </Box>
             </header>
         </Box>

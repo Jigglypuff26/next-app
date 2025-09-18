@@ -1,44 +1,32 @@
 'use client';
 
 import React from 'react';
-import { useEffect, useState } from 'react';
 import { Theme } from '@/shared/theme.type';
-import classes from './themeToggle.module.css';
-import { setLocalStorage } from '@/utils/localStorage';
+import classes from './theme-toggle.module.css';
+import { useTheme } from 'next-themes';
 
-type ThemeToggle = {
-  initialValue?: Theme
-}
+const ThemeToggle: React.FC = () => {
+  const { theme, setTheme } = useTheme();
+  const [checked, setChecked] = React.useState<boolean>(false);
 
-const ThemeToggle: React.FC<ThemeToggle> = (props) => {
-  const { initialValue = 'light' } = props
-  const [theme, setTheme] = useState(initialValue);
-
-  const isDarkTheme = React.useMemo(() => theme === 'dark', [theme]);
-
-  const handleChange = React.useCallback(() => {
-    const currentTheme = theme === 'dark' ? 'light' : 'dark'
-    const body = document?.querySelector('body');
-    body?.classList.remove(theme);
-    body?.classList.add(currentTheme);
-    setTheme(currentTheme);
-    setLocalStorage('App', { theme: currentTheme });
+   const handleChange = React.useCallback(() => {
+    const currentTheme: Theme = theme === 'dark' ? 'light' : 'dark';
+    if (setTheme) {
+      setTheme(currentTheme);
+    }
   }, [theme, setTheme]);
 
-  useEffect(() => {
+  React.useLayoutEffect(() => {
     if (theme) {
-      const body = document?.querySelector('body');
-      body?.classList.add(theme);
-    } else {
-      setTheme(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      setChecked(theme === 'dark');
     }
   }, [theme]);
-
+  
     return (
         <label className={classes.theme_switch}>
             <input
                 type="checkbox"
-                checked={isDarkTheme}
+                checked={checked}
                 className={classes.theme_switch__checkbox}
                 onChange={handleChange}
             />

@@ -1,11 +1,8 @@
 import type { Metadata } from 'next';
 import clsx from 'clsx';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
-import { ThemeProvider } from '@mui/material/styles';
 import { Roboto } from 'next/font/google';
-
-import theme from '../providers/theme';
-
+import { ThemeProvider } from 'next-themes';
 import './globals.css';
 
 const roboto = Roboto({
@@ -30,12 +27,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
+    <html lang='en' suppressHydrationWarning>
       <body
         className={clsx(roboto.variable, 'antialiased')}
       >
         <AppRouterCacheProvider>
-          <ThemeProvider theme={theme}>
+          <ThemeProvider>
             {children}
           </ThemeProvider>
         </AppRouterCacheProvider>

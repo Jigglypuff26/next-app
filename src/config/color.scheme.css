@@ -24,9 +24,13 @@
 /* @theme inline {} */
 
 /*  Dark scheme */
-.dark {
+[data-theme='dark'] {
   --color-background-body: var(--color-dark-purpure);
   --color-background: var(--color-dark-purpure-gray);
   --color-text: var(--color-dark-bege);
   --color-divider: var(--color-dark-purpure-divider);
+}
+
+[data-theme='green'] {
+ /* для другой темы название ещё нужно будет поменять в @/shared/theme.type.ts */
 }
