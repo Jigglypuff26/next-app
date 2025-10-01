@@ -2,6 +2,13 @@
   "name": "next-app",
   "version": "0.1.0",
   "private": true,
+  "description": "",
+  "author": "Maksim Vekovshinin",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://gitflic.ru/project/watchtime24/next-app.git"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
