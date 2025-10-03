@@ -1,7 +1,7 @@
 FROM node:lts AS dependencies
 WORKDIR /next-app
 COPY package.json next-app/package.json
-RUN npm install --frozen-lockfile
+RUN npm install
 
 FROM node:lts AS builder
 WORKDIR /next-app
