@@ -1,15 +1,15 @@
-FROM node:lts as dependencies
+FROM node:lts AS dependencies
 WORKDIR /next-app
-COPY package.json npm.lock ./
+COPY package.json next-app/package.json
 RUN npm install --frozen-lockfile
 
-FROM node:lts as builder
+FROM node:lts AS builder
 WORKDIR /next-app
 COPY . .
 COPY --from=dependencies /next-app/node_modules ./node_modules
 RUN npm build
 
-FROM node:lts as runner
+FROM node:lts AS runner
 WORKDIR /next-app
 ENV NODE_ENV production
 
