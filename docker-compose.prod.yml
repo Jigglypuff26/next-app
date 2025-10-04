@@ -1,0 +1,13 @@
+# пример запуска скрипта docker compose -f docker-compose.prod.yml -p rsp-prod up
+services:
+  nextjs-prod:
+    build:
+      context: .
+      dockerfile: ./docker/prod/Dockerfile.prod
+    container_name: prod-mod
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    # environment:
+    #   NODE_ENV: production

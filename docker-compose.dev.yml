@@ -1,0 +1,12 @@
+# пример запуска скрипта docker compose -f docker-compose.dev.yml -p rsp-dev up
+
+  services:
+    nextjs-dev:
+      build:
+        context: .
+        dockerfile: ./docker/dev/Dockerfile.dev
+      ports:
+        - "3000:3000"
+      volumes:
+        - ./:/app
+        - /app/node_modules
