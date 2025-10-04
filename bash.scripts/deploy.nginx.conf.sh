@@ -1,6 +1,6 @@
 # опционально т.к ещё на этом сервере тестируется другое приложение
-sudo rm -rf /etc/nginx/sites-available/rsp.conf
-sudo rm -rf /etc/nginx/sites-enabled/rsp.conf
+sudo rm -rf /etc/nginx/sites-available/react.conf
+sudo rm -rf /etc/nginx/sites-enabled/react.conf
 
 # удаление старого конфига
 sudo rm -rf /etc/nginx/sites-available/next.conf
