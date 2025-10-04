@@ -31,5 +31,8 @@ COPY --from=builder /app-prod/next.config.ts ./
 # 10. Expose port 3000
 EXPOSE 3000
 
+# 11. Install only production dependencies
+RUN npm install --production
+
 # 12. Start the Next.js server
 CMD ["npm", "start"]
