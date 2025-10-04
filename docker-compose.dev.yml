@@ -1,13 +1,13 @@
 # пример запуска скрипта docker compose -f docker-compose.dev.yml -p nextjs-dev up
 
-  services:
-    nextjs-dev:
-      build:
-        context: .
-        dockerfile: ./docker/dev/Dockerfile.dev
-      container_name: dev-mod
-      ports:
-        - "3000:3000"
-      volumes:
-        - ./:/app
-        - /app/node_modules
+services:
+  nextjs-dev:
+    build:
+      context: .
+      dockerfile: ./docker/dev/Dockerfile.dev
+    container_name: dev-mod
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
+      - /app/node_modules
