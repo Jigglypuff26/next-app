@@ -1,4 +1,4 @@
-# пример запуска скрипта docker compose -f docker-compose.prod.yml -p rsp-prod up
+# пример запуска скрипта docker compose -f docker-compose.prod.yml -p nextjs-prod up
 services:
   nextjs-prod:
     build:
