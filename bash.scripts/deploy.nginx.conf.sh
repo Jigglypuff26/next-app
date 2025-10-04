@@ -10,3 +10,5 @@ sudo cp -r nginx/next.conf /etc/nginx/sites-available/
 sudo ln -s /etc/nginx/sites-available/next.conf /etc/nginx/sites-enabled/
 # перезапус nginx
 sudo systemctl restart nginx
+
+echo "NGINX конфигурация для приложения установленна"
