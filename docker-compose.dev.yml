@@ -7,7 +7,7 @@ services:
       dockerfile: ./docker/dev/Dockerfile.dev
     container_name: dev-mod
     ports:
-      - "3001:3001"
+      - "4000:4000"
     volumes:
       - ./:/app
       - /app/node_modules
