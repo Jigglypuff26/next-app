@@ -37,9 +37,11 @@ export const Header: NextPage<HeaderPropsTypes> = (props) => {
                     />
                     <Typography>{COMPANY.name}</Typography>
                 </Box>
-                <Box className={classes.navigation_wrapper}>
-                    <Typography>Nav Links: {variant}</Typography>
-                </Box>
+                {variant !== 'default' && (
+                    <Box className={classes.navigation_wrapper}>
+                        <Typography>Nav Links: {variant}</Typography>
+                    </Box>
+                )}
                 <Box className={classes.settings_wrapper}>
                     <LazyThemeToggle/>
                 </Box>
