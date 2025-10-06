@@ -37,7 +37,7 @@ export default function RootLayout({
         <AppRouterCacheProvider>
           <ThemeProvider
             themes={themsList}
-            defaultTheme="light"
+            defaultTheme="dark"
           >
             {children}
           </ThemeProvider>

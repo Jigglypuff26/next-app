@@ -1,4 +1,5 @@
 'use client';
+
 import { Box, Typography } from '@mui/material';
 
 import { NextPage } from 'next';
@@ -10,7 +11,7 @@ import { COMPANY } from '@/config/app.settings';
 
 import classes from './header.module.css';
 
-const ThemeToggle = dynamic(() => import('../ThemeToggle').then(module => ({ default: module.ThemeToggle })),
+const LazyThemeToggle = dynamic(() => import('../ThemeToggle').then(module => ({ default: module.ThemeToggle })),
     {
         loading: () => <Box sx={{ width: '72px' }} />,
         ssr: false,
@@ -40,7 +41,7 @@ export const Header: NextPage<HeaderPropsTypes> = (props) => {
                     <Typography>Nav Links: {variant}</Typography>
                 </Box>
                 <Box className={classes.settings_wrapper}>
-                    <ThemeToggle/>
+                    <LazyThemeToggle/>
                 </Box>
             </header>
         </Box>
