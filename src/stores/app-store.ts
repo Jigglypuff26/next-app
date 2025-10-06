@@ -19,7 +19,7 @@ const defaultInitState: AppStateTypes = {
 
 const appStore: StateCreator<
   IAppStoreTypes,
-  [['zustand/devtools', never], ['zustand/persist', unknown]] //
+  [['zustand/devtools', never], ['zustand/persist', unknown]]
 > = ((set) => ({
     ...defaultInitState,
     changeVersion: (value) => set(() => ({ version: value }), false, 'changeVersion'), // set(сама функция, флаг реплейс если ставим true то стор полностью перезапишется поэтомму ставим false чтобы менялсось то что нам нужно, имя экшена для отображения в devtools)

@@ -1,18 +1,27 @@
 'use client';
+import { Box, Typography } from '@mui/material';
+
+import { NextPage } from 'next';
+import dynamic from 'next/dynamic';
+import Image from 'next/image';
 
 import { LogoIcon } from '@/assets/icons';
 import { COMPANY } from '@/config/app.settings';
-import { Box, Typography } from '@mui/material';
-import { NextPage } from 'next';
-import Image from 'next/image';
-import ThemeToggle from '@/components/UI/ThemeToggle/ThemeToggle';
+
 import classes from './header.module.css';
+
+const ThemeToggle = dynamic(() => import('../ThemeToggle').then(module => ({ default: module.ThemeToggle })),
+    {
+        loading: () => <Box sx={{ width: '72px' }} />,
+        ssr: false,
+    }
+);
 
 type HeaderPropsTypes = {
     variant?: "default" | "user" | "admin"
 }
 
-const Header: NextPage<HeaderPropsTypes> = (props) => {
+export const Header: NextPage<HeaderPropsTypes> = (props) => {
     const { variant = 'default' } = props;
 
     return (
@@ -37,5 +46,3 @@ const Header: NextPage<HeaderPropsTypes> = (props) => {
         </Box>
     );
 }
-
-export default Header;

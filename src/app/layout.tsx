@@ -3,6 +3,9 @@ import clsx from 'clsx';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import { Roboto } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
+
+import { themsList } from '@/constarts/theme';
+
 import './globals.css';
 
 const roboto = Roboto({
@@ -32,7 +35,10 @@ export default function RootLayout({
         className={clsx(roboto.variable, 'antialiased')}
       >
         <AppRouterCacheProvider>
-          <ThemeProvider>
+          <ThemeProvider
+            themes={themsList}
+            defaultTheme="light"
+          >
             {children}
           </ThemeProvider>
         </AppRouterCacheProvider>

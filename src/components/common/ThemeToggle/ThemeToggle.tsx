@@ -1,32 +1,28 @@
 'use client';
 
 import React from 'react';
-import { Theme } from '@/shared/theme.type';
-import classes from './theme-toggle.module.css';
 import { useTheme } from 'next-themes';
 
-const ThemeToggle: React.FC = () => {
-  const { theme, setTheme } = useTheme();
-  const [checked, setChecked] = React.useState<boolean>(false);
+import { ITheme } from '@/shared/theme.type';
 
-   const handleChange = React.useCallback(() => {
-    const currentTheme: Theme = theme === 'dark' ? 'light' : 'dark';
+import classes from './theme.toggle.module.css';
+
+export const ThemeToggle: React.FC = () => {
+  const { theme, setTheme } = useTheme();
+  
+
+  const handleChange = React.useCallback(() => {
+    const currentTheme: ITheme = theme === 'dark' ? 'light' : 'dark';
     if (setTheme) {
       setTheme(currentTheme);
     }
   }, [theme, setTheme]);
-
-  React.useLayoutEffect(() => {
-    if (theme) {
-      setChecked(theme === 'dark');
-    }
-  }, [theme]);
   
     return (
         <label className={classes.theme_switch}>
             <input
                 type="checkbox"
-                checked={checked}
+                checked={theme === 'dark'}
                 className={classes.theme_switch__checkbox}
                 onChange={handleChange}
             />
@@ -54,5 +50,3 @@ const ThemeToggle: React.FC = () => {
         </label>
     );
 }
-
-export default ThemeToggle;
