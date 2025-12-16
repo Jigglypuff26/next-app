@@ -1,3 +1,3 @@
 export const COMPANY = {
-    name: 'Foton'
+  name: 'Foton',
 };

@@ -1,16 +1,12 @@
 import { Box } from '@mui/material';
-import { NextPage } from 'next'
+import { NextPage } from 'next';
 
 type AdminPageProps = {
-    text?: ''
-}
+  text?: '';
+};
 
 const AdminPage: NextPage<AdminPageProps> = ({}) => {
-    return (
-        <Box>
-            AdminPage
-        </Box>
-    );
-}
+  return <Box>AdminPage</Box>;
+};
 
 export default AdminPage;
