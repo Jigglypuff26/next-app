@@ -1,3 +1,3 @@
-import { ITheme } from "@/shared/theme.type";
+import { ITheme } from '@/shared/theme.type';
 
-export const themsList: ITheme[] = ['dark', 'light',  'green'];
+export const themsList: ITheme[] = ['dark', 'light', 'green'];

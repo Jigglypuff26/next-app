@@ -18,11 +18,10 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   title: {
     template: '%s - Next-app', // title страницы если заходми на другую страницу
-    default: 'Next-app По умолчанию' // title страницы если заходим на коерневую страницу
+    default: 'Next-app По умолчанию', // title страницы если заходим на коерневую страницу
   },
   description: 'Описание',
 };
-
 
 export default function RootLayout({
   children,
@@ -30,15 +29,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' suppressHydrationWarning>
-      <body
-        className={clsx(roboto.variable, 'antialiased')}
-      >
+    <html lang="en" suppressHydrationWarning>
+      <body className={clsx(roboto.variable, 'antialiased')}>
         <AppRouterCacheProvider>
-          <ThemeProvider
-            themes={themsList}
-            defaultTheme="dark"
-          >
+          <ThemeProvider themes={themsList} defaultTheme="dark">
             {children}
           </ThemeProvider>
         </AppRouterCacheProvider>

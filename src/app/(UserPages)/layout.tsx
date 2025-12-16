@@ -15,10 +15,10 @@ const AdminPagesLayout = ({
 }>) => {
   return (
     <Box>
-      <Header variant='user'/>
+      <Header variant="user" />
       {children}
     </Box>
   );
-}
+};
 
 export default AdminPagesLayout;

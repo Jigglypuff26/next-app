@@ -5,7 +5,7 @@
   --color-ligth-dark-blue: rgb(19 30 55);
   --color-ligth-gray-blue: rgb(98 112 146);
   --color-ligth-blue: rgb(0 113 254);
-  
+
   /* colors dark palette*/
   --color-dark-black: rgb(0 0 0);
   --color-dark-purpure: rgb(28 28 40);
@@ -32,5 +32,5 @@
 }
 
 [data-theme='green'] {
- /* для другой темы название ещё нужно будет поменять в @/shared/theme.type.ts */
+  /* для другой темы название ещё нужно будет поменять в @/shared/theme.type.ts */
 }

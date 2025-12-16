@@ -1,16 +1,12 @@
 import { Box } from '@mui/material';
-import { NextPage } from 'next'
+import { NextPage } from 'next';
 
 type UserPageProps = {
-    text?: ''
-}
+  text?: '';
+};
 
 const UserPage: NextPage<UserPageProps> = ({}) => {
-    return (
-        <Box>
-            UserPage
-        </Box>
-    );
-}
+  return <Box>UserPage</Box>;
+};
 
 export default UserPage;
