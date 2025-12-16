@@ -18,7 +18,8 @@
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check": "npm run lint && npm run format:check"
+    "check": "npm run lint && npm run format:check",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",
@@ -50,8 +51,19 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-unused-imports": "^4.3.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^16.2.7",
     "prettier": "^3.7.4",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml,css,scss}": [
+      "prettier --write"
+    ]
   }
 }
