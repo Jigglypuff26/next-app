@@ -32,7 +32,7 @@ COPY --from=builder /app-prod/next.config.ts ./
 EXPOSE 3000
 
 # 11. Установка только продуктовых зависимостей
-RUN npm install --production
+RUN npm install --omit=dev
 
 # 12. Запуск  Next.js приложения
 CMD ["npm", "start"]
