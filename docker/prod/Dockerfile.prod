@@ -1,14 +1,14 @@
-# 1. Использование node 23 Alpine в качестве основы для сборки
+# 1. Использование node 22 Alpine в качестве основы для сборки
 FROM node:22-alpine AS builder
 
 # 2. Создание и установка рабочего каталога
 WORKDIR /app-prod
 
-# 3. Манифест зависимости копирования package.json
+# 3. Копирование package.json и package-lock.json
 COPY package*.json ./
 
-# 4. Устанавка зависимостей
-RUN npm install
+# 4. Установка ВСЕХ зависимостей (включая devDependencies)
+RUN npm ci
 
 # 5. Копирование исходного кода
 COPY . .
@@ -16,23 +16,30 @@ COPY . .
 # 6. Сборка Next.js приложения
 RUN npm run build
 
-# 7. Использование node 23 Alpine для запуска приложения
+# 7. Использование node 22 Alpine для запуска приложения
 FROM node:22-alpine AS runner
 
 # 8. Установка рабочего каталога 
 WORKDIR /app-prod
 
-# 9. Копирование необходимого файла
-COPY --from=builder /app-prod/.next ./.next
+# 9. Копирование package.json
 COPY --from=builder /app-prod/package*.json ./
+
+# 10. Установка ТОЛЬКО продуктовых зависимостей
+RUN npm ci --only=production
+
+# 11. Копирование собранного приложения
+COPY --from=builder /app-prod/.next ./.next
 COPY --from=builder /app-prod/public ./public
 COPY --from=builder /app-prod/next.config.ts ./
 
-# 10. использование порта для запуска приложения
+# 12. Создание непривилегированного пользователя
+RUN addgroup --system --gid 1001 nodejs && \
+    adduser --system --uid 1001 nextjs
+USER nextjs
+
+# 13. Использование порта для запуска приложения
 EXPOSE 3000
 
-# 11. Установка только продуктовых зависимостей
-RUN npm install --omit=dev
-
-# 12. Запуск  Next.js приложения
+# 14. Запуск Next.js приложения
 CMD ["npm", "start"]
