@@ -8,6 +8,7 @@ coverage
 .next
 out
 package-lock.json
+package.json
 yarn.lock
 pnpm-lock.yaml
 .env*.local
