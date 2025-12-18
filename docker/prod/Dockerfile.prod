@@ -8,7 +8,7 @@ WORKDIR /app-prod
 COPY package*.json ./
 
 # 4. Устанавка зависимостей
-RUN npm install
+RUN npm ci
 
 # 5. Копирование исходного кода
 COPY . .
@@ -32,7 +32,7 @@ COPY --from=builder /app-prod/next.config.ts ./
 EXPOSE 3000
 
 # 11. Установка только продуктовых зависимостей
-RUN npm install --production
+RUN npm ci --omit=dev
 
 # 12. Запуск  Next.js приложения
 CMD ["npm", "start"]
