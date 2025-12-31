@@ -7,7 +7,7 @@ WORKDIR /app-prod
 # 3. Манифест зависимости копирования package.json
 COPY package*.json ./
 
-# 4. Устанавка зависимостей
+# 4. Установка зависимостей
 RUN npm ci
 
 # 5. Копирование исходного кода
@@ -19,20 +19,33 @@ RUN npm run build
 # 7. Использование node 23 Alpine для запуска приложения
 FROM node:23-alpine AS runner
 
-# 8. Установка рабочего каталога 
+# 8. Создание non-root пользователя для безопасности
+RUN addgroup --system --gid 1001 nodejs && \
+    adduser --system --uid 1001 nextjs
+
+# 9. Установка рабочего каталога 
 WORKDIR /app-prod
 
-# 9. Копирование необходимого файла
-COPY --from=builder /app-prod/.next ./.next
+# 10. Копирование package.json для установки зависимостей
 COPY --from=builder /app-prod/package*.json ./
-COPY --from=builder /app-prod/public ./public
-COPY --from=builder /app-prod/next.config.ts ./
 
-# 10. использование порта для запуска приложения
+# 11. Установка только продуктовых зависимостей (как root)
+RUN npm ci --omit=dev && npm cache clean --force
+
+# 12. Копирование необходимых файлов
+COPY --from=builder --chown=nextjs:nodejs /app-prod/.next ./.next
+COPY --from=builder --chown=nextjs:nodejs /app-prod/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app-prod/next.config.ts ./
+# next-env.d.ts не нужен в production, Next.js работает без него
+
+# 13. Изменение владельца всей директории на nextjs для корректной работы
+RUN chown -R nextjs:nodejs /app-prod
+
+# 14. Использование порта для запуска приложения
 EXPOSE 3000
 
-# 11. Установка только продуктовых зависимостей
-RUN npm ci --omit=dev
+# 15. Переключение на non-root пользователя
+USER nextjs
 
-# 12. Запуск  Next.js приложения
+# 16. Запуск Next.js приложения
 CMD ["npm", "start"]
