@@ -1,6 +1,9 @@
-# удаление (опционально) т.к ещё на этом сервере тестируется другое приложение
-# Пример запуска sh ./bash.scripts/deploy.nginx.conf.sh из корнегоко каталога проекта
-sudo  rm -f /etc/nginx/sites-enabled/*
+# ВНИМАНИЕ: Раскомментируйте следующую строку только если хотите удалить ВСЕ сайты
+# Это может сломать другие приложения на сервере!
+# sudo  rm -f /etc/nginx/sites-enabled/*
+
+# Безопасное удаление только нашего конфига
+sudo rm -f /etc/nginx/sites-enabled/next.conf
 
 # удаление старого конфига
 sudo rm -rf /etc/nginx/sites-available/next.conf
