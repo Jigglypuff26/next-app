@@ -16,8 +16,8 @@
     "start": "next start",
     "docker:dev": "docker compose -f docker-compose.dev.yml -p nextjs-dev up",
     "docker:prod": "docker compose -f docker-compose.prod.yml -p nextjs-prod up",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "check": "npm run lint && npm run format:check"
