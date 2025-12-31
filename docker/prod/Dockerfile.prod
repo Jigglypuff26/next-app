@@ -29,7 +29,7 @@ WORKDIR /app-prod
 # 10. Копирование package.json для установки зависимостей
 COPY --from=builder /app-prod/package*.json ./
 
-# 11. Установка только продуктовых зависимостей
+# 11. Установка только продуктовых зависимостей (как root)
 RUN npm ci --omit=dev && npm cache clean --force
 
 # 12. Копирование необходимых файлов
@@ -38,11 +38,14 @@ COPY --from=builder --chown=nextjs:nodejs /app-prod/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app-prod/next.config.ts ./
 # next-env.d.ts не нужен в production, Next.js работает без него
 
-# 13. Использование порта для запуска приложения
+# 13. Изменение владельца всей директории на nextjs для корректной работы
+RUN chown -R nextjs:nodejs /app-prod
+
+# 14. Использование порта для запуска приложения
 EXPOSE 3000
 
-# 14. Переключение на non-root пользователя
+# 15. Переключение на non-root пользователя
 USER nextjs
 
-# 15. Запуск Next.js приложения
+# 16. Запуск Next.js приложения
 CMD ["npm", "start"]
