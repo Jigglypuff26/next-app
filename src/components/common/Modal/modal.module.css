@@ -16,7 +16,9 @@
   position: relative;
   background-color: var(--color-background);
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.06);
   min-width: 300px;
   max-width: 90vw;
   min-height: 200px;
@@ -139,7 +141,9 @@
 .modal_overlay {
   background-color: var(--color-background);
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.06);
   min-width: 400px;
   max-width: 90vw;
 }
@@ -165,4 +169,3 @@
     max-width: 90vw;
   }
 }
-

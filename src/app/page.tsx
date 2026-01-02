@@ -16,7 +16,11 @@ export default function Home() {
             Демонстрация модального окна
           </Typography>
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-            <Button variant="contained" onClick={() => setIsModalOpen(true)} sx={{ width: 'fit-content' }}>
+            <Button
+              variant="contained"
+              onClick={() => setIsModalOpen(true)}
+              sx={{ width: 'fit-content' }}
+            >
               Открыть модальное окно с DnD
             </Button>
             <Typography variant="body1" sx={{ color: 'text.secondary' }}>
@@ -36,8 +40,8 @@ export default function Home() {
       >
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           <Typography variant="body1">
-            Это демонстрация модального окна с поддержкой drag and drop, созданного с использованием библиотеки
-            @dnd-kit.
+            Это демонстрация модального окна с поддержкой drag and drop, созданного с использованием
+            библиотеки @dnd-kit.
           </Typography>
           <Typography variant="body2" sx={{ color: 'text.secondary' }}>
             <strong>Возможности:</strong>
@@ -51,7 +55,11 @@ export default function Home() {
           <Typography variant="body2" sx={{ color: 'text.secondary', marginTop: '8px' }}>
             Попробуйте перетащить это окно за заголовок!
           </Typography>
-          <Button variant="outlined" onClick={() => setIsModalOpen(false)} sx={{ marginTop: '16px' }}>
+          <Button
+            variant="outlined"
+            onClick={() => setIsModalOpen(false)}
+            sx={{ marginTop: '16px' }}
+          >
             Закрыть
           </Button>
         </Box>

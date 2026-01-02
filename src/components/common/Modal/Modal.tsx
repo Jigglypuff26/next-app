@@ -1,6 +1,16 @@
 'use client';
 
-import { DndContext, DragEndEvent, DragMoveEvent, DragOverlay, DragStartEvent, PointerSensor, useDraggable, useSensor, useSensors } from '@dnd-kit/core';
+import {
+  DndContext,
+  DragEndEvent,
+  DragMoveEvent,
+  DragOverlay,
+  DragStartEvent,
+  PointerSensor,
+  useDraggable,
+  useSensor,
+  useSensors,
+} from '@dnd-kit/core';
 import { CSS } from '@dnd-kit/utilities';
 import { Box, Typography } from '@mui/material';
 import { NextPage } from 'next';
@@ -69,7 +79,9 @@ export const Modal: NextPage<ModalProps> = (props) => {
   const [modalSize, setModalSize] = useState({ width: 0, height: 0 });
   const [modalDimensions, setModalDimensions] = useState({ width: 400, height: 300 });
   const [isResizing, setIsResizing] = useState(false);
-  const resizeStartRef = useRef<{ x: number; y: number; width: number; height: number } | null>(null);
+  const resizeStartRef = useRef<{ x: number; y: number; width: number; height: number } | null>(
+    null
+  );
   const justFinishedResizingRef = useRef(false);
 
   const sensors = useSensors(
@@ -140,8 +152,14 @@ export const Modal: NextPage<ModalProps> = (props) => {
       const maxWidth = typeof window !== 'undefined' ? window.innerWidth * 0.9 : 1200;
       const maxHeight = typeof window !== 'undefined' ? window.innerHeight * 0.9 : 800;
 
-      const newWidth = Math.max(minWidth, Math.min(maxWidth, resizeStartRef.current.width + deltaX));
-      const newHeight = Math.max(minHeight, Math.min(maxHeight, resizeStartRef.current.height + deltaY));
+      const newWidth = Math.max(
+        minWidth,
+        Math.min(maxWidth, resizeStartRef.current.width + deltaX)
+      );
+      const newHeight = Math.max(
+        minHeight,
+        Math.min(maxHeight, resizeStartRef.current.height + deltaY)
+      );
 
       setModalDimensions({ width: newWidth, height: newHeight });
     };
@@ -202,7 +220,7 @@ export const Modal: NextPage<ModalProps> = (props) => {
       const newX = position.x + event.delta.x;
       const newY = position.y + event.delta.y;
       const constrained = constrainPosition(newX, newY);
-      
+
       setDragDelta({
         x: constrained.x - position.x,
         y: constrained.y - position.y,
@@ -244,7 +262,12 @@ export const Modal: NextPage<ModalProps> = (props) => {
   };
 
   return (
-    <DndContext sensors={sensors} onDragStart={handleDragStart} onDragMove={handleDragMove} onDragEnd={handleDragEnd}>
+    <DndContext
+      sensors={sensors}
+      onDragStart={handleDragStart}
+      onDragMove={handleDragMove}
+      onDragEnd={handleDragEnd}
+    >
       <div className={classes.overlay} onClick={handleOverlayClick}>
         <Box
           ref={modalRef}
@@ -299,4 +322,3 @@ export const Modal: NextPage<ModalProps> = (props) => {
     </DndContext>
   );
 };
-
