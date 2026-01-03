@@ -10,5 +10,9 @@ type ModalContentProps = {
 };
 
 export const ModalContent = ({ children }: ModalContentProps) => {
-  return <Box className={classes.modal_content}>{children}</Box>;
+  return (
+    <Box className={classes.modal_content_wrapper}>
+      <Box className={classes.modal_content}>{children}</Box>
+    </Box>
+  );
 };
