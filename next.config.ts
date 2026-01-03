@@ -46,9 +46,6 @@ const nextConfig: NextConfig = {
   // Компрессия
   compress: true,
 
-  // Оптимизация production сборки
-  // swcMinify: true,
-
   // React strict mode
   reactStrictMode: true,
 
