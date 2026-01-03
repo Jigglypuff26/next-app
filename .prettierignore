@@ -1,14 +1,62 @@
-.next
-node_modules
-public
-dist
-build
+# Dependencies
+node_modules/
+
+# Build outputs
+.next/
+out/
+dist/
+build/
+
+# Testing
+coverage/
 *.min.js
-coverage
-.next
-out
+*.min.css
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment variables
+.env*.local
+.env
+
+# Lock files (usually auto-generated)
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
-.env*.local
-*.log
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Docker and deployment configs
+docker/
+nginx/
+bash.scripts/
+
+# Cache directories
+.cache/
+.parcel-cache/
+.eslintcache
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Vercel
+.vercel/
+
+# Public assets (usually binary files)
+public/**/*.{png,jpg,jpeg,gif,svg,ico,webp,woff,woff2,ttf,eot}
+public/**/*.pdf

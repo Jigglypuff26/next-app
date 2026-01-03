@@ -1,6 +1,6 @@
 @import 'tailwindcss';
-@import '../config/app.css';
-@import '../config/color.scheme.css';
+@import '../shared/config/app.css';
+@import '../shared/config/color.scheme.css';
 
 body {
   background: var(--color-background-body);

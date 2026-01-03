@@ -1,0 +1,53 @@
+.modal_content {
+  padding: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1;
+  color: var(--color-text);
+  min-height: 0;
+
+  /* Тонкий скроллбар для Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+
+  box-sizing: border-box;
+
+  /* Для браузеров с поддержкой scrollbar-gutter - резервируем место */
+  scrollbar-gutter: stable;
+
+  /* Для браузеров без поддержки - скроллбар overlay по умолчанию в WebKit */
+}
+
+/* Тонкий скроллбар для WebKit браузеров (Chrome, Safari, Edge) */
+.modal_content::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.modal_content::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 3px;
+}
+
+.modal_content::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  transition: background 0.2s ease;
+}
+
+.modal_content::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Для темной темы */
+[data-theme='dark'] .modal_content {
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+[data-theme='dark'] .modal_content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+[data-theme='dark'] .modal_content::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}

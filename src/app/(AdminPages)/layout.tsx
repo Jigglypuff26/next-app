@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import { Metadata } from 'next';
 
-import { Header } from '@/components/common/Header';
+import { Header } from '@/widgets/header';
 
 export const metadata: Metadata = {
   title: 'AdminPages',
