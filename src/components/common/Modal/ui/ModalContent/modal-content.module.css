@@ -1,27 +1,21 @@
-.modal_content_wrapper {
-  flex: 1;
-  overflow: hidden;
-  display: flex;
-  min-height: 0;
-}
-
 .modal_content {
   padding: 20px;
   overflow-y: auto;
   overflow-x: hidden;
-  width: 100%;
+  flex: 1;
   color: var(--color-text);
+  min-height: 0;
 
-  /* Тонкий скроллбар для Firefox (overlay - не занимает место) */
+  /* Тонкий скроллбар для Firefox */
   scrollbar-width: thin;
   scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
 
-  /* Скроллбар не влияет на ширину контента */
   box-sizing: border-box;
 
-  /* Компенсируем ширину скроллбара через padding */
-  padding-right: 26px; /* 20px padding + 6px скроллбар */
-  margin-right: -6px; /* Компенсируем отрицательным margin */
+  /* Для браузеров с поддержкой scrollbar-gutter - резервируем место */
+  scrollbar-gutter: stable;
+
+  /* Для браузеров без поддержки - скроллбар overlay по умолчанию в WebKit */
 }
 
 /* Тонкий скроллбар для WebKit браузеров (Chrome, Safari, Edge) */

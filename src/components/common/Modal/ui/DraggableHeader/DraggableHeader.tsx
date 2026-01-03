@@ -25,8 +25,6 @@ export const DraggableHeader = ({ id, title, onClose, isDragging }: DraggableHea
       className={isDragging ? classes.dragging : ''}
       {...listeners}
       {...attributes}
-    >
-      <div className={classes.drag_handle_icon}>⋮⋮</div>
-    </ModalHeader>
+    />
   );
 };
