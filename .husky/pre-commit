@@ -4,8 +4,8 @@
 echo "🔍 Running Running Running..."
 
 # Фикс по .prettierrc
-echo "⚡🔧 Prettier Fix..."
-npm run format
+# echo "⚡🔧 Prettier Fix..."
+# npm run format
 
 # # 1. Проверка форматирования и линтинга через lint-staged
 # echo "📝 Formatting and linting..."

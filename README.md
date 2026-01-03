@@ -7,7 +7,7 @@
 - app/ # Роутинг и страницы
 - assets/ # Изображения, шрифты
 - components/ # UI-компоненты (Button, Input, ...)
-- constarts/ # Константы
+- constants/ # Константы
 - hooks/ # Кастомные хуки
 - services/ # API и внешние сервисы
 - shared/ # Общие утилиты и типы

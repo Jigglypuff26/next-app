@@ -4,7 +4,7 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import { Roboto } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
 
-import { themsList } from '@/constarts/theme';
+import { themsList } from '@/shared/config';
 
 import './globals.css';
 
