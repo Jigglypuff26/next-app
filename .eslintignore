@@ -1,5 +1,7 @@
 # Dependencies
 node_modules/
+.pnp
+.pnp.*
 
 # Build outputs
 .next/
@@ -9,6 +11,14 @@ build/
 
 # Testing
 coverage/
+*.test.js
+*.test.ts
+*.test.tsx
+*.spec.js
+*.spec.ts
+*.spec.tsx
+
+# Minified files
 *.min.js
 *.min.css
 
@@ -21,13 +31,8 @@ pnpm-debug.log*
 lerna-debug.log*
 
 # Environment variables
+.env*
 .env*.local
-.env
-
-# Lock files (usually auto-generated)
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
 
 # TypeScript
 *.tsbuildinfo
@@ -38,10 +43,27 @@ docker/
 nginx/
 bash.scripts/
 
+# Public assets (static files)
+public/
+
 # Cache directories
 .cache/
 .parcel-cache/
 .eslintcache
+.turbo/
+
+# Config files (usually don't need linting)
+*.config.js
+*.config.mjs
+*.config.ts
+.eslintrc*
+.prettierrc*
+tsconfig*.json
+next.config.*
+
+# Generated files
+.next/
+.vercel/
 
 # OS files
 .DS_Store
@@ -54,9 +76,18 @@ Thumbs.db
 *.swo
 *~
 
-# Vercel
-.vercel/
+# Lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
 
-# Public assets (usually binary files)
-public/**/*.{png,jpg,jpeg,gif,svg,ico,webp,woff,woff2,ttf,eot}
-public/**/*.pdf
+# Storybook (if used)
+.storybook/
+storybook-static/
+
+# Temporary files
+*.tmp
+*.temp
+.tmp/
+.temp/
+

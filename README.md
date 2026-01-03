@@ -40,3 +40,10 @@
 3. `npm i`
 4. `npm run start`
 5. После запуска открыть в браузере [localhost:3000](http://localhost:3000/)
+
+## Документация
+
+- [CONTRIBUTING.md](./CONTRIBUTING.md) - Руководство по внесению вклада в проект
+- [DEPLOYMENT.md](./DEPLOYMENT.md) - Инструкции по развертыванию приложения
+- [CHANGELOG.md](./CHANGELOG.md) - История изменений проекта
+- [FSD_IMPROVEMENTS.md](./FSD_IMPROVEMENTS.md) - Рекомендации по архитектуре FSD
