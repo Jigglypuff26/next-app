@@ -103,7 +103,6 @@ export const Modal: NextPage<ModalProps> = (props) => {
         {activeId ? (
           <Box className={classes.modal_overlay} sx={{ opacity: 0.5 }}>
             <Box className={classes.modal_header}>
-              <div className={classes.drag_handle_icon}>⋮⋮</div>
               {title && (
                 <Typography variant="h6" className={classes.modal_title}>
                   {title}

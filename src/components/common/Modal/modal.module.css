@@ -16,15 +16,6 @@
 }
 
 /* Стили для DragOverlay */
-.drag_handle_icon {
-  color: var(--color-text-secondary, #666);
-  font-size: 18px;
-  margin-right: 12px;
-  opacity: 0.6;
-  transition: opacity 0.2s ease;
-  line-height: 1;
-}
-
 .modal_header {
   display: flex;
   align-items: center;
