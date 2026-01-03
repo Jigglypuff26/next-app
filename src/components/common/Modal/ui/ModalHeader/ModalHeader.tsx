@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Typography } from '@mui/material';
+import { Box, BoxProps, Typography } from '@mui/material';
 import { forwardRef, ReactNode } from 'react';
 
 import classes from './modal-header.module.css';
@@ -10,8 +10,7 @@ type ModalHeaderProps = {
   onClose: () => void;
   children?: ReactNode;
   className?: string;
-  [key: string]: unknown;
-};
+} & Omit<BoxProps, 'children' | 'className'>;
 
 export const ModalHeader = forwardRef<HTMLDivElement, ModalHeaderProps>(
   ({ title, onClose, children, className = '', ...props }, ref) => {
