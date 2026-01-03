@@ -7,12 +7,13 @@ import dynamic from 'next/dynamic';
 import Image from 'next/image';
 
 import { LogoIcon } from '@/assets/icons';
-import { COMPANY } from '@/config/app.settings';
+import { COMPANY } from '@/shared/config';
+import { ThemeToggle } from '@/features/theme-toggle';
 
 import classes from './header.module.css';
 
 const LazyThemeToggle = dynamic(
-  () => import('../ThemeToggle').then((module) => ({ default: module.ThemeToggle })),
+  () => import('@/features/theme-toggle').then((module) => ({ default: module.ThemeToggle })),
   {
     loading: () => <Box sx={{ width: '72px' }} />,
     ssr: false,

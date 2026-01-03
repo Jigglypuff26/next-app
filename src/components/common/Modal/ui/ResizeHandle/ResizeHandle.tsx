@@ -16,4 +16,3 @@ export const ResizeHandle = ({ onResizeStart }: ResizeHandleProps) => {
     />
   );
 };
-

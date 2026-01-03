@@ -1,6 +1,7 @@
 'use client';
 
-import { Header, Modal } from '@/components/common';
+import { Header } from '@/widgets/header';
+import { Modal } from '@/components/common';
 import { Box, Button, Typography } from '@mui/material';
 import { useState } from 'react';
 

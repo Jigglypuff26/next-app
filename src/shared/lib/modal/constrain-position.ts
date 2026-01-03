@@ -6,7 +6,11 @@ type ConstrainPositionParams = {
   size: ModalSize;
 };
 
-export const constrainPosition = ({ position, dimensions, size }: ConstrainPositionParams): ModalPosition => {
+export const constrainPosition = ({
+  position,
+  dimensions,
+  size,
+}: ConstrainPositionParams): ModalPosition => {
   const width = dimensions.width || size.width;
   const height = dimensions.height || size.height;
 
@@ -31,4 +35,3 @@ export const constrainPosition = ({ position, dimensions, size }: ConstrainPosit
     y: constrainedY,
   };
 };
-

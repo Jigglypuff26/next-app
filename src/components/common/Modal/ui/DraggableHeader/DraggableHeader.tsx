@@ -30,4 +30,3 @@ export const DraggableHeader = ({ id, title, onClose, isDragging }: DraggableHea
     </ModalHeader>
   );
 };
-

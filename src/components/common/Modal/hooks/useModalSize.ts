@@ -10,7 +10,7 @@ type UseModalSizeParams = {
 };
 
 export const useModalSize = ({ isOpen, modalDimensions }: UseModalSizeParams) => {
-  const modalRef = useRef<HTMLDivElement>(null);
+  const modalRef = useRef<HTMLDivElement | null>(null);
   const [modalSize, setModalSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
@@ -29,4 +29,3 @@ export const useModalSize = ({ isOpen, modalDimensions }: UseModalSizeParams) =>
 
   return { modalRef, modalSize };
 };
-

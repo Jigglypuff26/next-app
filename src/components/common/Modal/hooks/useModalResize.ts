@@ -7,7 +7,7 @@ import { ModalDimensions, ModalPosition, ResizeStartData } from '@/shared/types/
 import { constrainPosition } from '@/shared/lib/modal';
 
 type UseModalResizeParams = {
-  modalRef: React.RefObject<HTMLDivElement>;
+  modalRef: React.RefObject<HTMLDivElement | null>;
   modalDimensions: ModalDimensions;
   setModalDimensions: (dimensions: ModalDimensions) => void;
   position: ModalPosition;
@@ -52,8 +52,14 @@ export const useModalResize = ({
       const maxWidth = typeof window !== 'undefined' ? window.innerWidth * 0.9 : 1200;
       const maxHeight = typeof window !== 'undefined' ? window.innerHeight * 0.9 : 800;
 
-      const newWidth = Math.max(minWidth, Math.min(maxWidth, resizeStartRef.current.width + deltaX));
-      const newHeight = Math.max(minHeight, Math.min(maxHeight, resizeStartRef.current.height + deltaY));
+      const newWidth = Math.max(
+        minWidth,
+        Math.min(maxWidth, resizeStartRef.current.width + deltaX)
+      );
+      const newHeight = Math.max(
+        minHeight,
+        Math.min(maxHeight, resizeStartRef.current.height + deltaY)
+      );
 
       setModalDimensions({ width: newWidth, height: newHeight });
     };
@@ -107,4 +113,3 @@ export const useModalResize = ({
     justFinishedResizingRef,
   };
 };
-

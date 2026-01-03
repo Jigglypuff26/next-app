@@ -1,6 +1,13 @@
 'use client';
 
-import { DragEndEvent, DragMoveEvent, DragStartEvent, PointerSensor, useSensor, useSensors } from '@dnd-kit/core';
+import {
+  DragEndEvent,
+  DragMoveEvent,
+  DragStartEvent,
+  PointerSensor,
+  useSensor,
+  useSensors,
+} from '@dnd-kit/core';
 import { useCallback, useState } from 'react';
 
 import { ModalPosition } from '@/shared/types/modal.types';
@@ -14,7 +21,12 @@ type UseModalDragParams = {
   modalSize: { width: number; height: number };
 };
 
-export const useModalDrag = ({ position, setPosition, modalDimensions, modalSize }: UseModalDragParams) => {
+export const useModalDrag = ({
+  position,
+  setPosition,
+  modalDimensions,
+  modalSize,
+}: UseModalDragParams) => {
   const [isDragging, setIsDragging] = useState(false);
   const [activeId, setActiveId] = useState<string | null>(null);
   const [dragDelta, setDragDelta] = useState<ModalPosition>({ x: 0, y: 0 });
@@ -87,4 +99,3 @@ export const useModalDrag = ({ position, setPosition, modalDimensions, modalSize
     handleDragEnd,
   };
 };
-

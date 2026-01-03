@@ -24,17 +24,26 @@ export const Modal: NextPage<ModalProps> = (props) => {
   } = props;
 
   const [position, setPosition] = useState(initialPosition || { x: 0, y: 0 });
-  const [modalDimensions, setModalDimensions] = useState(initialDimensions || { width: 400, height: 300 });
+  const [modalDimensions, setModalDimensions] = useState(
+    initialDimensions || { width: 400, height: 300 }
+  );
 
   const { modalRef, modalSize } = useModalSize({ isOpen, modalDimensions });
 
-  const { isDragging, activeId, constrainedPosition, sensors, handleDragStart, handleDragMove, handleDragEnd } =
-    useModalDrag({
-      position,
-      setPosition,
-      modalDimensions,
-      modalSize,
-    });
+  const {
+    isDragging,
+    activeId,
+    constrainedPosition,
+    sensors,
+    handleDragStart,
+    handleDragMove,
+    handleDragEnd,
+  } = useModalDrag({
+    position,
+    setPosition,
+    modalDimensions,
+    modalSize,
+  });
 
   const { isResizing, handleResizeStart, justFinishedResizingRef } = useModalResize({
     modalRef,
@@ -64,7 +73,12 @@ export const Modal: NextPage<ModalProps> = (props) => {
   };
 
   return (
-    <DndContext sensors={sensors} onDragStart={handleDragStart} onDragMove={handleDragMove} onDragEnd={handleDragEnd}>
+    <DndContext
+      sensors={sensors}
+      onDragStart={handleDragStart}
+      onDragMove={handleDragMove}
+      onDragEnd={handleDragEnd}
+    >
       <ModalOverlay onClick={handleOverlayClick}>
         <Box
           ref={modalRef}

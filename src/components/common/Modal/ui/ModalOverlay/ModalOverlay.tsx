@@ -6,7 +6,7 @@ import classes from './modal-overlay.module.css';
 
 type ModalOverlayProps = {
   children: ReactNode;
-  onClick: () => void;
+  onClick: (e: React.MouseEvent) => void;
 };
 
 export const ModalOverlay = ({ children, onClick }: ModalOverlayProps) => {
@@ -16,4 +16,3 @@ export const ModalOverlay = ({ children, onClick }: ModalOverlayProps) => {
     </div>
   );
 };
-

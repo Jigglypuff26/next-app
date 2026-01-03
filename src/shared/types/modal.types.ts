@@ -32,4 +32,3 @@ export type ResizeStartData = {
   width: number;
   height: number;
 };
-

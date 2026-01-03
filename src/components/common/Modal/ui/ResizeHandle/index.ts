@@ -1,2 +1,1 @@
 export { ResizeHandle } from './ResizeHandle';
-
