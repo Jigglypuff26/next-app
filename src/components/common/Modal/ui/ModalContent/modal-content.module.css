@@ -1,0 +1,7 @@
+.modal_content {
+  padding: 20px;
+  overflow-y: auto;
+  flex: 1;
+  color: var(--color-text);
+}
+

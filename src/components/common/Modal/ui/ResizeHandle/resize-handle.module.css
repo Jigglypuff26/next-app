@@ -1,0 +1,32 @@
+.resize_handle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  cursor: nwse-resize;
+  z-index: 10;
+  background: linear-gradient(
+    -45deg,
+    transparent 0%,
+    transparent 30%,
+    var(--color-text-secondary, #999) 30%,
+    var(--color-text-secondary, #999) 35%,
+    transparent 35%,
+    transparent 65%,
+    var(--color-text-secondary, #999) 65%,
+    var(--color-text-secondary, #999) 70%,
+    transparent 70%
+  );
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:active {
+    opacity: 1;
+  }
+}
+
