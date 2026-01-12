@@ -4,19 +4,19 @@
 
 ## Описание архитектуры
 
-- app/ # Роутинг и страницы
-- assets/ # Изображения, шрифты
-- components/ # UI-компоненты (Button, Input, ...)
-- constants/ # Константы
-- hooks/ # Кастомные хуки
-- services/ # API и внешние сервисы
-- shared/ # Общие утилиты и типы
-- store/ # Глобальные состояния (Mobx / Redux)
-- providers/ # Контексты (темы, авторизация)
-- config/ # Настройки
-- external/ # Интеграции
-- utils/ # Вспомогательные функции
-- service-actions/ # Сервисные действия
+Проект использует архитектуру **Feature-Sliced Design (FSD)**:
+
+- **app/** - Роутинг, страницы и провайдеры приложения
+- **widgets/** - Крупные самостоятельные блоки интерфейса (Header и т.д.)
+- **features/** - Функциональные возможности (theme-toggle и т.д.)
+- **components/** - UI-компоненты (Modal и т.д.)
+- **shared/** - Переиспользуемые части:
+  - `config/` - Конфигурация приложения
+  - `constants/` - Константы
+  - `lib/` - Утилиты и хелперы
+  - `store/` - Глобальное состояние (Zustand)
+  - `types/` - Общие типы
+- **assets/** - Статические ресурсы (иконки, изображения)
 
 ### Требования
 
@@ -32,18 +32,39 @@
 ## Запуск
 
 1. Клонировать проект:
-   HTTPS [https://gitflic.ru/project/watchtime24/next-app.git](https://gitflic.ru/project/watchtime24/next-app.git)
 
-- или -
-  SSH [git@gitflic.ru:watchtime24/next-app.git](git@gitflic.ru:watchtime24/next-app.git)
+   ```bash
+   # HTTPS
+   git clone https://gitflic.ru/project/watchtime24/next-app.git
 
-3. `npm i`
-4. `npm run start`
-5. После запуска открыть в браузере [localhost:3000](http://localhost:3000/)
+   # или SSH
+   git clone git@gitflic.ru:watchtime24/next-app.git
+   ```
+
+2. Установить зависимости:
+
+   ```bash
+   npm i
+   ```
+
+3. Запустить проект:
+
+   ```bash
+   # Режим разработки
+   npm run dev
+
+   # Или продакшен сборка
+   npm run build
+   npm run start
+   ```
+
+4. Открыть в браузере [http://localhost:3000](http://localhost:3000/)
 
 ## Документация
 
-- [CONTRIBUTING.md](./CONTRIBUTING.md) - Руководство по внесению вклада в проект
-- [DEPLOYMENT.md](./DEPLOYMENT.md) - Инструкции по развертыванию приложения
-- [CHANGELOG.md](./CHANGELOG.md) - История изменений проекта
-- [FSD_IMPROVEMENTS.md](./FSD_IMPROVEMENTS.md) - Рекомендации по архитектуре FSD
+Дополнительная документация находится в папке [docs/](./docs/):
+
+- [CONTRIBUTING.md](./docs/CONTRIBUTING.md) - Руководство по внесению вклада в проект
+- [DEPLOYMENT.md](./docs/DEPLOYMENT.md) - Инструкции по развертыванию приложения
+- [CHANGELOG.md](./docs/CHANGELOG.md) - История изменений проекта
+- [FSD_IMPROVEMENTS.md](./docs/FSD_IMPROVEMENTS.md) - Рекомендации по архитектуре FSD
