@@ -15,6 +15,10 @@ sudo rm -rf /etc/nginx/sites-available/next.conf
 sudo cp -r nginx/next.conf /etc/nginx/sites-available/
 # создание ссылки на nginx файл конфигурации
 sudo ln -s /etc/nginx/sites-available/next.conf /etc/nginx/sites-enabled/
+
+# копировние глобального конфига nginx
+sudo cp -r ./nginx.conf /etc/nginx/nginx.conf
+
 # перезапус nginx
 sudo systemctl restart nginx
 
